@@ -43,6 +43,10 @@ public class EMailAddress {
     }
 
     public String toMaskedString(char maskChar ) {
-        return "*"+ local.substring(1,local.length()-1) + maskChar + DomainDelimiter + domain;
+        char[] chars = local.toCharArray();
+        for ( int n = 1; n < local.length() - 1; n++ ) {
+            chars[n] = maskChar;
+        }
+        return new String(chars) + DomainDelimiter + domain;
     }
 }

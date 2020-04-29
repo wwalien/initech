@@ -21,7 +21,7 @@ public class ContactMaskerTests {
 
     @Test
     void given_AWellFormedEMailAddress_When_Masking_Expect_AProperlyMaskedValueIsReturned() {
-        assertEquals("*es*@example.com", ContactMasker.maskContact("test@example.com",'*'));
+        assertEquals("t**t@example.com", ContactMasker.maskContact("test@example.com",'*'));
     }
     @Test
     void given_AWellFormedPhoneNumber_When_Masking_Expect_AProperlyMaskedValueIsReturned() {

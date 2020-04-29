@@ -14,10 +14,10 @@ public class EMailAddressTests {
     @Test
     void given_AValidEmailAddress_When_Parsed_ExpectAnEmailAddressObject() {
         assertEquals("simple@example.com", EMailAddress.parse("simple@example.com").toString());
-        assertEquals("*impl*@example.com", EMailAddress.parse("simple@example.com").toMaskedString('*'));
+        assertEquals("s****e@example.com", EMailAddress.parse("simple@example.com").toMaskedString('*'));
 
         assertEquals( "very.common@example.com",EMailAddress.parse("very.common@example.com").toString());
-        assertEquals( "*ery.commo*@example.com",EMailAddress.parse("very.common@example.com").toMaskedString('*'));
+        assertEquals( "v*********n@example.com",EMailAddress.parse("very.common@example.com").toMaskedString('*'));
 
         /*
          Our EMail class is not comprehensive, if it were, here would some other examples we might test.
